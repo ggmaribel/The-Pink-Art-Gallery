@@ -1,7 +1,6 @@
 .app__gallery {
     flex-direction: row;
     background: var(--color-bg);
-    padding: 4rem 0;
 }
 
 .app__gallery-content {
@@ -10,7 +9,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-width: 500px;
 }
 
 .app__gallery-content .pink {
@@ -23,15 +21,16 @@
 }
 
 .app__gallery-images {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    max-width: 90%;
+    width: 90%;
     position: relative;
     margin: auto;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
 }
 
 .app__gallery-images_container {
+    margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     width: max-content;
@@ -43,20 +42,42 @@
 .app__gallery-images_container::-webkit-scrollbar {
     display: none;
 }
+
 .slide-track {
     display: flex;
     width: calc(500px * 18);
     animation: scroll 170s linear infinite;
 }
+
 .slide-track:hover {
     animation-play-state: paused;
 }
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-250px * 31));
+        transform: translateX(calc(-195px * 31));
+    }
+}
+
+.slide-track-bottom {
+    display: flex;
+    width: calc(500px * 18);
+    animation: scrollBottom 170s linear infinite;
+}
+
+.slide-track-bottom:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollBottom {
+    0% {
+        transform: translateX(calc(-195px * 31));
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -66,55 +87,17 @@
     margin-right: 2rem;
 }
 
-.gallery__image-icon {
-    position: absolute;
-    color: #fff;
-    font-size: 2rem;
-    opacity: 0;
-    transition: .5s ease;
-    cursor: pointer;
-}
-
 .app__gallery-images_card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 1;
-    transition: .5s ease;
+    transition: transform 9s;
 }
 
-.app__gallery-images_card:hover img {
-    opacity: .6;
+.app__gallery-images_card:hover {
+    transform: scale(1.2);
 }
 
-.app__gallery-images_card:hover .gallery__image-icon {
-    opacity: 1;
-}
-
-.app__gallery-images_arrows {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    position: absolute;
-    bottom: 5%;
-}
-
-.gallery__arrow-icon {
-    color: var(--color-golden);
-    font-size: 2rem;
-    cursor: pointer;
-    background: var(--color-black);
-    border-radius: 5px;
-}
-
-.gallery__arrow-icon:hover {
-    color: var(--color-white);
-}
-
-
-
+/* MEDIA SCREEN */
 @media screen and (min-width: 2000px) {
     .app__gallery-content button {
         margin-top: 2rem;

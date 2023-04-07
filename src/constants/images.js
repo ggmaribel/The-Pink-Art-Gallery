@@ -1,4 +1,4 @@
-
+import logo from '../assets/logo.png';
 import gallery01 from '../assets/gallery01.png';
 import gallery02 from '../assets/gallery02.png';
 import gallery03 from '../assets/gallery03.png';
@@ -28,6 +28,7 @@ import gallery26 from '../assets/gallery26.png';
 import gallery27 from '../assets/gallery27.png';
 
 export default {
+    logo,
     gallery01,
     gallery02,
     gallery03,

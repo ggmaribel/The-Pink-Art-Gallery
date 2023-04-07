@@ -1,0 +1,30 @@
+.footer {
+    font-family: var(--font-base);
+    width: 90%;
+    margin: auto;
+    border-top: 3px solid var(--color-pink);
+    text-align: center;
+}
+
+.footer .logo {
+    margin: 10px 0 0 0;
+}
+
+.logo img{
+    height: 70px;
+}
+
+.social-links {
+    font-size: 23px;
+    margin: 10px 0 0 0;
+    letter-spacing: 20px;
+}
+
+.social-links a {
+    margin: 10px 10px;
+    color: var(--color-pink);
+}
+
+.footer .copy {
+    margin: 10px 0;
+}
