@@ -1,3 +1,8 @@
+/* 
+==========================================
+            MAIN GENERAL STYLE
+==========================================
+*/
 .custom__button {
   background-color: var(--color-secondary);
   color: var(--color-black);
@@ -38,12 +43,16 @@
   font-family: var(--font-base);
   color: var(--color-title);
   font-size: 60px;
-  line-height: 83.2px;
   letter-spacing: 0.04em;
   text-transform: capitalize;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
+/* 
+==========================================
+            MEDIA SCREEN
+========================================== 
+*/
 @media screen and (min-width: 2000px) {
   .custom__button,
   .p__cormorant {

@@ -1,13 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { images } from '../../constants';
+import { AiOutlineClose, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import './Header.css';
 
 const Header = () => {
+  const [data, setData] = useState({img: '', i: 0})
+  
+  const viewImage = (img, i) => {
+    setData({img, i});
+  }
+
+  const imgAction = (action) => {
+    let i = data.i;
+    if(action === 'next-img') {
+      setData({img: images[i + 1], i: i + 1});
+    }
+    if(action === 'prev-img') {
+      setData({img: images[i - 1], i: i - 1});
+    }
+    if(!action) {
+      setData({img: '', i: 0});
+    }
+  }
+
   return (
     <div className="app__gallery">
+
+      {/* 
+      ==========================================
+          POPUP IMAGE 
+      ==========================================
+      */}
+      {data.img &&
+        <div className='popup'>
+          <div className='popupContent'>
+            <button className='btnClose' onClick={() => imgAction()}>
+              < AiOutlineClose style={{background: 'none'}}/>
+            </button>
+            {/* <button className='btnPrev' onClick={() => imgAction('prev-img')}>
+              <AiOutlineArrowLeft style={{background: 'none'}}/>
+            </button> */}
+            <img src={ data.img } alt='img'/>
+            {/* <button className='btnNext' onClick={() => imgAction('next-img')}>
+              <AiOutlineArrowRight style={{background: 'none'}}/>
+            </button> */}
+          </div>
+        </div>
+      }
+
+      {/* 
+      ==========================================
+          MAIN CONTENT 
+      ==========================================
+      */}
       <div className="app__gallery-content">
         <h1 className="headtext">The <span class="pink">Pink</span> ART Gallery</h1>
       </div>
+
+      {/* GALLERY TOP CONTENT */}
       <div className="app__gallery-images">
         <div className="app__gallery-images_container slide-track">
           {[
@@ -37,13 +87,25 @@ const Header = () => {
             images.gallery25,
             images.gallery26,
             images.gallery27,
-          ].map((image, index) => (
-            <div className="app__gallery-images_card" key={`gallery_image-${index + 1}`}>
-              <img src={image} alt="gallery_image" />
+          ].map((image, i) => (
+            <div className="app__gallery-images_card" key={`gallery_image-${i + 1}`}>
+              <img 
+                key={i} 
+                src={image} 
+                alt="gallery_image"
+                style={{cursor: 'pointer'}}
+                onClick={() => viewImage(image, i)}
+              />
             </div>
           ))}
         </div>
       </div>
+
+      {/* 
+      ==========================================
+          GALLERY BOTTOM CONTENT 
+      ==========================================
+      */}
       <div className="app__gallery-images">
         <div className="app__gallery-images_container slide-track-bottom">
           {[
@@ -73,9 +135,15 @@ const Header = () => {
             images.gallery25,
             images.gallery26,
             images.gallery27,
-          ].map((image, index) => (
-            <div className="app__gallery-images_card" key={`gallery_image-${index + 1}`}>
-              <img src={image} alt="gallery_image" />
+          ].map((image, i) => (
+            <div className="app__gallery-images_card" key={`gallery_image-${i + 1}`}>
+              <img 
+                key={i} 
+                src={image} 
+                alt="gallery_image"
+                style={{cursor: 'pointer'}}
+                onClick={() => viewImage(image, i)}
+              />
             </div>
           ))}
         </div>

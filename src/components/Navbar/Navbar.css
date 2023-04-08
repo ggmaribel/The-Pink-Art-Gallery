@@ -9,3 +9,20 @@
 .logo img{
     height: 70px;
 }
+
+/*
+==========================================
+            MEDIA SCREEN
+========================================== 
+*/
+@media screen and (max-width: 640px) {
+    .navbar {
+        padding: 15px 10px 0 10px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .logo {
+        margin-left: 0px;
+    }
+}
