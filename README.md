@@ -2,8 +2,7 @@
 
 <img src="src/assets/imgExample.png" height="400">
 <br>
-<br>
-<img src="src/assets/videoExample.gif" height="400">
+<img src="src/assets/videoExample.gif" height="250" width="auto">
 
 The Pink Art Gallery is a simple React project that displays a carousel of pink pictures. It's a great starting point for building a more complex art gallery or photo carousel.
 
