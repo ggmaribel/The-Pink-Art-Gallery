@@ -44,7 +44,7 @@
 ==========================================
 */
 .app__gallery-images_card {
-    min-width: 250px;
+    width: 250px;
     height: 250px;
     margin-right: 2rem;
 }
@@ -170,11 +170,6 @@
         min-width: 1000px;
         padding-right: 4rem;
     }
-
-    .app__gallery-images_card {
-        min-width: 400px;
-        height: 547px;
-    }
 }
 
 @media screen and (max-width: 1150px) {
@@ -196,15 +191,6 @@
         width: 100%;
     }
 
-    .app__gallery-images {
-        margin-top: 3rem;
-    }
-
-    .app__gallery-images_card {
-        min-width: 240px;
-        height: 320px;
-    }
-
     .popup img {
         width: 100%;
         margin-top: 70px;
@@ -213,6 +199,6 @@
 
 @media screen and (max-width: 450px) {
     .popup img {
-        margin-top: 200px;
+        margin-top: 100px;
     }
 }
