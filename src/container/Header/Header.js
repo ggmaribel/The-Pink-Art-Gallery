@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { images } from '../../constants';
-import { AiOutlineClose, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai';
 import './Header.css';
 
 const Header = () => {
@@ -11,13 +11,6 @@ const Header = () => {
   }
 
   const imgAction = (action) => {
-    let i = data.i;
-    if(action === 'next-img') {
-      setData({img: images[i + 1], i: i + 1});
-    }
-    if(action === 'prev-img') {
-      setData({img: images[i - 1], i: i - 1});
-    }
     if(!action) {
       setData({img: '', i: 0});
     }
@@ -37,13 +30,7 @@ const Header = () => {
             <button className='btnClose' onClick={() => imgAction()}>
               < AiOutlineClose style={{background: 'none'}}/>
             </button>
-            {/* <button className='btnPrev' onClick={() => imgAction('prev-img')}>
-              <AiOutlineArrowLeft style={{background: 'none'}}/>
-            </button> */}
             <img src={ data.img } alt='img'/>
-            {/* <button className='btnNext' onClick={() => imgAction('next-img')}>
-              <AiOutlineArrowRight style={{background: 'none'}}/>
-            </button> */}
           </div>
         </div>
       }
